@@ -624,13 +624,15 @@ else
     
     if file_e~=0
         d = waitbar(0.2,'Espere,guardando datos');
-        var.file_e=[path_e,file_e];
+        var.file_e=[path_e,'Digitales_',file_e];
         var.path=path_e;
-        writetable(Data1,var.file_e,'Sheet',1);
+        writetable(Data1,var.file_e);
         waitbar(0.3,d,'Espere,guardando datos');
-        writetable(Data2,var.file_e,'Sheet',2);
+        var.file_e=[path_e,'Analogos_',file_e];
+        writetable(Data2,var.file_e);
         waitbar(0.7,d,'Espere,guardando datos');
-        writetable(Data3,var.file_e,'Sheet',3, 'WriteVariableNames', 0);
+        var.file_e=[path_e,'Datos_',file_e];
+        writetable(Data3,var.file_e);
         
         waitbar(1,d,'Listo');
         pause(1)
